@@ -1,6 +1,25 @@
-<div class="container">
-    <h1>{{item?.name}}</h1>
-    <!-- {{item|json}} -->
+<div class="bg"
+     [style.background]="'url('+item?.sprites?.front_default+')'"></div>
 
-        
+<div class="container">
+    <!-- <img [src]="'https://nexus.traction.one/images/pokemon/pokemon/10.png'"
+         alt=""> -->
+    <h1>{{item?.name}}</h1>
+    <div class="types">
+        <div *ngFor="let type of item?.types"
+             class="type">
+            {{type?.type?.name}}
+        </div>
+    </div>
+    <ng-container *ngIf="item?.sprites">
+        <!-- <img [src]="item?.sprites?.back_default"
+             alt=""> -->
+        <img [src]="item?.sprites?.front_default"
+             width="300px"
+             alt="">
+    </ng-container>
+    <div class="card">
+
+
+    </div>
 </div>
