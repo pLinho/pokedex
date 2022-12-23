@@ -4,12 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { CardsComponent } from './views/cards/cards.component';
 import { TableComponent } from './views/table/table.component';
 import { ItemComponent } from './views/item/item.component';
+import { BattleComponent } from './views/battle/battle.component';
 
 const routes: Routes = [
   { path: 'cards', component: CardsComponent },
-  { path: 'list', component: ListComponent },
+  { path: '', component: ListComponent },
   { path: 'table', component: TableComponent },
   { path: 'pokemon', component: ItemComponent },
+  { path: 'battle', component: BattleComponent },
 ];
 
 @NgModule({

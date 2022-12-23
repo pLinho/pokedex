@@ -108,8 +108,25 @@
     }
 }
 
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translatey(-30px)
+    }
+
+    50% {
+        transform: translatey(0)
+    }
+}
+
 .flutuar {
     animation: float 2s ease-in-out infinite;
+}
+
+.flutuar2 {
+    animation: float2 3.4s ease-in-out infinite;
 }
 
 .actions {
@@ -128,4 +145,18 @@
             background: url(/assets/icons/batalhar.svg);
         }
     }
+}
+
+.player_1 {
+    position: absolute;
+    left: -30px;
+    bottom: 60px;
+    width: 600px;
+}
+
+.player_2 {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    width: 250px;
 }

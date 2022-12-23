@@ -1,0 +1,7 @@
+img {
+    filter: grayscale(1) saturate(13.5) sepia(22) brightness(0.1);
+
+    &:visited {
+        filter: unset;
+    }
+}

@@ -5,15 +5,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
-    selector: 'ci-item',
-    templateUrl: 'item.component.html',
+    selector: 'ci-battle',
+    templateUrl: 'battle.component.html',
     styleUrls: [
-        'item.component.scss'
+        'battle.component.scss'
     ]
 })
-export class ItemComponent {
-    item?: Pokemon;
-
+export class BattleComponent {
+    player1?: Pokemon;
+    player2?: Pokemon;
     constructor(
         private readonly pokedex: PokedexService,
         private readonly router: Router,
@@ -22,24 +22,16 @@ export class ItemComponent {
 
     ngOnInit() {
         this.route.queryParams.subscribe(params => {
-            this.pokedex.pokemon(params['code']).subscribe(result => {
-                this.item = result;
-                var mensagem = new SpeechSynthesisUtterance();
-                mensagem.text = this.item.name || '';
-                speechSynthesis.speak(mensagem);
-            }
-            );
-
+            this.pokedex.pokemon(params['player_1']).subscribe(result =>
+                this.player1 = result);
+            this.pokedex.pokemon(Math.floor(Math.random() * 653)).subscribe(result =>
+                this.player2 = result);
         });
+
     }
 
     selectTypeUrl(url: string) {
 
     }
-
-    battle() {
-        this.router.navigate(['battle?player_1=' + this.item?.id]);
-    }
-
 
 }

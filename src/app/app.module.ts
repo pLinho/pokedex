@@ -12,6 +12,9 @@ import { TableComponent } from './views/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+import { MatTabsModule } from '@angular/material/tabs';
+import { BattleComponent } from './views/battle/battle.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     TableComponent,
     ListComponent,
     ItemComponent,
+    BattleComponent,
   ],
   imports: [
     PokedexApiModule.forRoot({
@@ -27,6 +31,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatTabsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

@@ -1,9 +1,10 @@
 <div class="bg"
      [style.background]="'url('+item?.sprites?.front_default+')'"></div>
-
+<div class="actions">
+    <div class="action battle"
+         (click)="battle()"></div>
+</div>
 <div class="container">
-    <!-- <img [src]="'https://nexus.traction.one/images/pokemon/pokemon/10.png'"
-         alt=""> -->
     <h1>{{item?.name}}</h1>
     <div class="types">
         <div *ngFor="let type of item?.types"
@@ -14,12 +15,28 @@
     <ng-container *ngIf="item?.sprites">
         <!-- <img [src]="item?.sprites?.back_default"
              alt=""> -->
-        <img [src]="item?.sprites?.front_default"
+        <img class="flutuar"
+             [src]="item?.sprites?.front_default"
              width="300px"
              alt="">
     </ng-container>
     <div class="card">
-
-
+        <mat-tab-group>
+            <mat-tab label="Sobre">
+            </mat-tab>
+            <mat-tab label="Estatísticas Básicas">
+            </mat-tab>
+            <mat-tab label="Evolução">
+            </mat-tab>
+            <mat-tab label="Movimentos">
+                <div class="moves">
+                    <ng-container *ngFor="let move of item?.moves">
+                        <div class="move">
+                            {{move?.move?.name}}
+                        </div>
+                    </ng-container>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
     </div>
 </div>
